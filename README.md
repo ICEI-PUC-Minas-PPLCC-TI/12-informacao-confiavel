@@ -1,6 +1,6 @@
 # Grupo 12 - Informação Confiável (Rotten Info)   
 
-![rotten info](https://i.imgur.com/aARQhdV.png)
+![rotten info](/docs/images/rottenIndo.png)
 
 ### Seja bem vindo ao Github de Rotten Info!
 
