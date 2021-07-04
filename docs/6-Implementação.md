@@ -1,6 +1,6 @@
 # Projeto da Solução
 
-<span style="color:red">Pré-requisitos: <a href="4-Gestão-Configuração.md"> Ambiente e Ferramentas de Trabalho</a></span>
+#### Apresentado nessa sessão estão os detalhes técnicos da solução criada pela equipe.
 
 ## Tecnologias Utilizadas
 
@@ -22,28 +22,40 @@
 > Inclua um diagrama da solução e descreva os módulos e as tecnologias
 > que fazem parte da solução. Discorra sobre o diagrama.
 
-A imagem a seguir ilustra a o fluxo do usuário em nossa solução. Assim
+A imagem a seguir ilustra o fluxo do usuário em nossa solução. Assim
 que o usuário entra na plataforma, ele é apresentado à tela inicial
-(Tela 1) onde ele é confrontado com as opões de editar seu perfil ou
-então visualizar sua galeria.
+(Main Page) onde ele possui as seguintes opções: 
+ 1. Clicar em um dos sites em destaque e ser direcionado a ele.
+ 2. Clicar em alguma das opções no _Header_.
+ 3. Clicar no círculo inferior direito para ativar o _Dark mode_.
 
-Caso ele opte por seguir pelo primeiro caminho (Editar Perfil), ele é
-redirecionado para a tela de edição de perfil (Tela 2), onde pode
-atualizar seus dados cadastrais. Nessa tela, o usuário também pode
-escolher para editar sua foto de perfil. Ao selecionar essa opção, ele é
-redirecionado para a Tela 3, onde ele a imagem expandida do perfil do
-usuário é mostrado. Ao selecionar a opção para atualizar a imagem, uma
-nova janela abre pedindo para o usuário fazer o upload da nova foto.
-Assim que o processo termina um pop-up exibe o status para o usuário
-(Tela 4) e o usuário é redirecionado para a Tela 2.
+Caso ele opte pela opção 1 e escolha um dos sites em destaque, ele será 
+redirecionado para uma o site, assim como possuirá uma opção de avaliação.
 
-Caso o usuário opte seguir pelo segundo caminho (Visualizar Galeria) ele
-é redirecionado para a Tela 5 com todas as fotos que o usuário possui. O
-usuário pode clicar em um post qualquer para visualizar os detalhes do
-post (Tela 6). Nessa tela, ele pode então escolher editar o post, sendo
-redirecionado para a Tela 7. Ao editar as informações, o usuário pode
-escolher salvar ou deletar o post. Em ambos os casos o status é
-notificado para o usuário (Tela 8) e em seguida ele é redirecionado
-para a Tela 2.
+Caso ele opte pela opção 2, o usuário poderia escolher entre: 
+ - `Home`: página principal.
+ - `Busca`: página para buscar um site em específico.
+ - `Favoritos`: apresenta os favoritos do usuário.
+ - `Login`: entrar com usuário ou cadastrar-se.
+ - `Sobre`: possui informações sobre o grupo.
 
-![Exemplo de UserFlow](images/userflow.jpg)
+Caso o usuário opte por `Home` ele será enviado para mesma página em que está. 
+
+Caso o usuário opte por `Busca` ele será enviado para uma página que possui 
+uma barra para pesquisar. Escrever o nome do site fará com que ele potencialmente 
+apareça e assim seja possível acessa-lo, favorita-lo ou avalia-lo.
+
+Caso o usuário opte por `Favoritos` ele será enviado para uma página contendo 
+os sites marcados como "favoritos", representados pela estrela. Assim, há 
+também uma opção de retira-los dos favoritos, avalia-los e acessa-los.
+
+Caso o usuário opte por `Login` ele será enviado a uma página que o permitirá 
+entrar com sua conta ou se cadastrar. Se o usuário deseja cadastrar-se então 
+ele será enviado para outra página com essa função. Após terminado o processo
+de login/cadastro, o usuário é redirecionado para a Main Page.
+
+Caso o usuário opte por `Sobre` ele será enviado para uma página contendo 
+informação sobre os integrantes do grupo.
+
+![tela principal](/docs/images/mainpage.png)
+![Exemplo de UserFlow](/docs/images/flowmap.png)
