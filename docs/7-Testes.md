@@ -5,16 +5,16 @@ na seção que se segue e traz os planos de testes de software e de usabilidade 
 na sequência, o registro dos testes realizados. 
 
 ### Sumário
->  `Plano de Teste de Software`
->  - `Objetivos`
->  - `Casos`
->  - `Avaliação`
+>  [`Plano de Teste de Software`](#plano-de-testes-de-software)
+>  - [`Objetivos`](#objetivos)
+>  - [`Casos`](#objetivos)
+>  - [`Avaliação`](#avaliação)
 >  
->  `Plano de Teste de Usabilidade`
->  - `Objetivos`
->  - `Casos`
->  - `Erros Notáveis`
->  - `Considerações Finais`
+>  [`Plano de Teste de Usabilidade`](#plano-de-testes-de-usabilidade)
+>  - [`Objetivos`](#casos-1)
+>  - [`Casos`](#avaliação-1)
+>  - [`Erros Notáveis`](#erros-notáveis)
+>  - [`Considerações Finais`]( )
 
 
 ## Plano de Testes de Software
