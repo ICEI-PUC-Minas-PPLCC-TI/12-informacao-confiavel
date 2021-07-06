@@ -4,6 +4,19 @@ O processo de realização dos testes da solução desenvolvida está documentad
 na seção que se segue e traz os planos de testes de software e de usabilidade e,
 na sequência, o registro dos testes realizados. 
 
+### Sumário
+>  `Plano de Teste de Software`
+>  - `Objetivos`
+>  - `Casos`
+>  - `Avaliação`
+>  
+>  `Plano de Teste de Usabilidade`
+>  - `Objetivos`
+>  - `Casos`
+>  - `Erros Notáveis`
+>  - `Considerações Finais`
+
+
 ## Plano de Testes de Software
 
 #### `Objetivos`
