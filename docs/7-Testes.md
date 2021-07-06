@@ -14,7 +14,7 @@ na sequência, o registro dos testes realizados.
 >  - [`Objetivos`](#casos-1)
 >  - [`Casos`](#avaliação-1)
 >  - [`Erros Notáveis`](#erros-notáveis)
->  - [`Considerações Finais`]( )
+>  - [`Considerações Finais`](#considerações-finais)
 
 
 ## Plano de Testes de Software
