@@ -21,17 +21,18 @@ function renderizaElementos() {
   resultado_container.empty();
 
   for (key in localStorage) {
-    webpage = JSON.parse(localStorage.getItem(key));
-    if (webpage == null) {
-      break;
-    } else {
-      let reputation =
-        webpage.reputation.design +
-        webpage.reputation.information +
-        webpage.reputation.ui +
-        webpage.reputation.partiality;
+    if (key.includes('webpage')) {
+      webpage = JSON.parse(localStorage.getItem(key));
+      if (webpage == null) {
+        break;
+      } else {
+        let reputation =
+          webpage.reputation.design +
+          webpage.reputation.information +
+          webpage.reputation.ui +
+          webpage.reputation.partiality;
 
-      resultado_container.append(`
+        resultado_container.append(`
         <div class='resultado row' id='${key}'>
           <div class="col">
             <img id='icon-feedback' pontuacao='${reputation}'>
@@ -94,19 +95,20 @@ function renderizaElementos() {
           </div>
         </div>
       `);
-      if (webpage.fav == true) {
-        let svg = $(`#fav-icon-${key}`);
-        svg.addClass("fav-icon-true");
-      }
+        if (webpage.fav == true) {
+          let svg = $(`#fav-icon-${key}`);
+          svg.addClass("fav-icon-true");
+        }
 
-      let element = "#" + key + " #icon-feedback";
+        let element = "#" + key + " #icon-feedback";
 
-      if (reputation < 0) {
-        $(element).attr("src", "assets/icons/ruim.png");
-      } else if (reputation > 0) {
-        $(element).attr("src", "assets/icons/bom.png");
-      } else {
-        $(element).attr("src", "assets/icons/neutro.png");
+        if (reputation < 0) {
+          $(element).attr("src", "assets/icons/ruim.png");
+        } else if (reputation > 0) {
+          $(element).attr("src", "assets/icons/bom.png");
+        } else {
+          $(element).attr("src", "assets/icons/neutro.png");
+        }
       }
     }
   }
@@ -116,65 +118,54 @@ function search() {
   var input, filter;
   input = $("#keywords");
   filter = input.val().toUpperCase();
-  listawebpages = $("#resultado-container").children();
+  listaWebpages = $(".resultado").children();
 
-  listawebpages.each((index, element) => {
-    var tagLink = element.reputation.children[1].children[0];
-
+  listaWebpages.each((index, element) => {
+    var tagLink = element.childNodes[3].childNodes[1];
     var domain = tagLink.getAttribute("href");
     var name = tagLink.children[0].textContent;
 
-    var description = element.reputation.children[1].children[1].textContent;
+    console.log(domain)
+    console.log(name)
 
     if (
-      description.toUpperCase().includes(filter) ||
       name.toUpperCase().includes(filter) ||
       domain.toUpperCase().includes(filter)
     ) {
-      element.reputation.style.display = "";
+      element.style.display = "";
     } else {
-      element.reputation.style.display = "none";
+      element.style.display = "none";
     }
   });
 }
 
 function changeReputation(key, category) {
   element = JSON.parse(localStorage.getItem(key));
-  console.log(element);
-
   localStorage.removeItem(key);
 
   switch (category) {
     case 1:
-      console.log(1);
       element.reputation.design = element.reputation.design + 1;
       break;
     case 2:
-      console.log(2);
       element.reputation.information = element.reputation.information + 1;
       break;
     case 3:
-      console.log(3);
       element.reputation.ui = element.reputation.ui + 1;
       break;
     case 4:
-      console.log(4);
       element.reputation.partiality = element.reputation.partiality + 1;
       break;
     case -1:
-      console.log(-1);
       element.reputation.design = element.reputation.design - 1;
       break;
     case -2:
-      console.log(-2);
       element.reputation.information = element.reputation.information - 1;
       break;
     case -3:
-      console.log(-3);
       element.reputation.ui = element.reputation.ui - 1;
       break;
     case -4:
-      console.log(-4);
       element.reputation.partiality = element.reputation.partiality - 1;
       break;
   }
@@ -547,17 +538,11 @@ class Validator {
   }
 }
 
-let form = document.getElementById("register-form");
-let submit = document.getElementById("btn-submit");
-
-let validator = new Validator();
-
 // evento de envio do form, que valida os inputs
-submit.addEventListener("click", function (e) {
+$('#register-button').onclick = () => {
   e.preventDefault();
-
-  validator.validate(form);
-});
+  validator.validate($("#register-form"));
+};
 
 $.getJSON("db/db.json", function (data) {
   data.forEach((webpage, index) => {
